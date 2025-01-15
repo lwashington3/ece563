@@ -1,0 +1,28 @@
+%! Package = ece563
+%! Author = Len Washington III
+%! Date = 01/15/2025
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ece563}[2025/01/15 A styling package for the class: ECE 563 - Artificial Intelligence in Smart Grid.]
+
+\RequirePackage{kvoptions}
+
+\SetupKeyvalOptions{
+	family=ece,
+	prefix=ece@
+}
+
+\DeclareStringOption{title}
+\DeclareStringOption[Len Washington III]{author}
+\DeclareStringOption[\today]{date}
+\DeclareStringOption[{Artificial Intelligence in Smart Grid}]{subject}
+\DeclareStringOption[{ECE 563}]{subjectCode}
+
+\ProcessKeyvalOptions*
+
+\RequirePackage[author=\ece@author,
+	title=\ece@title,
+	date=\ece@date,
+	subject=\ece@subject,
+	code=\ece@subjectCode
+]{iitacademics}
